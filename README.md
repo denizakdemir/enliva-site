@@ -143,10 +143,14 @@ between them, and the `github.io` address to redirect to it once verified.
 
 ### Step 5 (optional) — a company email that matches the domain
 
-Most registrars forward mail for free: create `hola@enliva.dev` (and
-`deniz@enliva.dev`) forwarding to your Gmail, then replace
-`deniz.akdemir.work@gmail.com` in `assets/js/main.js` (`EMAIL`), `index.html`
-and `legal.html`. That is the single biggest step towards separating the company
+**Cloudflare Email Routing** does this at no cost: move the domain's nameservers
+to Cloudflare (free plan), enable Email Routing, and create `hola@` and
+`deniz@` forwarding to your Gmail. Some registrars include forwarding too —
+check before paying for a mailbox.
+
+Then replace `deniz.akdemir.work@gmail.com` in `assets/js/main.js` (`EMAIL`),
+`index.html` (three places: contact card, 404 page, legal page) and
+`legal.html`. That is the single biggest step towards separating the company
 from your personal identity.
 
 ### If you host it as a project site (`username.github.io/enliva-site/`)
