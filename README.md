@@ -154,10 +154,13 @@ To link a company LinkedIn page later: create the page at
 <https://www.linkedin.com/company/setup/new/>, then uncomment the block in
 `index.html` (search for `Company LinkedIn page`) and paste the page URL.
 
-> The URL recorded in `LifeOS/profile/profile.md` is
-> `linkedin.com/in/deniz-akdemir--`. It is treated as unverified here: it was
-> removed from the site rather than published, because a wrong profile link is
-> worse than none.
+> **LinkedIn status (2026-11-17).** The URL recorded in
+> `LifeOS/profile/profile.md` is `linkedin.com/in/deniz-akdemir--`, which does
+> not resolve. A search found one profile that matches (PhD, Bowling Green,
+> 500+ connections): `linkedin.com/in/deniz-akdemir-phd-50735314a` — **not
+> published, not confirmed**. To use it, either add it back to the contact card
+> or, better, create the company page first so the site keeps pointing at
+> Enliva rather than at a person.
 
 ## Local preview
 
