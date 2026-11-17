@@ -1,6 +1,9 @@
 # Enliva Tecnologías — website
 
 Static site for **ENLIVA TECNOLOGÍAS, S.L.U.** · Málaga, Spain.
+
+**Live:** <https://denizakdemir.github.io/enliva-site/> · repository:
+<https://github.com/denizakdemir/enliva-site>
 Plain HTML, CSS and JavaScript — no build step, no dependencies, no cookies, no tracking.
 
 ```
