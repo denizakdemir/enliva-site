@@ -63,6 +63,13 @@ errors. Refresh the GitHub repo page — the nine files should be listed.
 
 Every future `git push` to `main` republishes automatically in under a minute.
 
+> **Why not a GitHub Actions workflow?** Tried it: a workflow using
+> `actions/configure-pages` with `enablement: true` fails with *"Create Pages
+> site failed. Error: Resource not accessible by integration"* — GitHub does not
+> let the workflow token create a Pages site, so the first enable must be done by
+> a human in the settings. After a manual first enable, either mode works; the
+> branch deploy above is simpler and has no Node runtime to deprecate.
+
 ### Step 4 (optional, ~€10–15/year) — own domain
 
 `enliva.com`, `enliva.net` and `enliva.es` are already registered by other
