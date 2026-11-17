@@ -4,6 +4,11 @@ Static site for **ENLIVA TECNOLOGÍAS, S.L.U.** · Málaga, Spain.
 
 **Live:** <https://denizakdemir.github.io/enliva-site/> · repository:
 <https://github.com/denizakdemir/enliva-site>
+
+**Short link:** <https://denizakdemir.github.io/enliva> redirects here. That is a
+one-file stub (`enliva/index.html`) living in the *personal* blog repo
+`denizakdemir/denizakdemir.github.io`, not in this one — if the site ever moves,
+update the redirect there too.
 Plain HTML, CSS and JavaScript — no build step, no dependencies, no cookies, no tracking.
 
 ```
