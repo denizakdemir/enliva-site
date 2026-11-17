@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Enliva Tecnologías</title>
+<meta name="description" content="The page you were looking for does not exist.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1b2e">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<!-- Styles are inlined on purpose: a 404 page must still render when the host
+     rewrites asset paths. See README before changing the href="/" links. -->
+<style>
+  :root {
+    --navy-800: #0a1b2e;
+    --ink: #10202f;
+    --ink-soft: #43596e;
+    --ink-muted: #6b829a;
+    --line: #e2e8ee;
+    --mint: #0d7a4a;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    font-family: var(--font);
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 70% 0%, rgba(18, 160, 95, .1), transparent 62%),
+      #fff;
+    text-align: center;
+    padding: 64px 24px;
+  }
+  .eyebrow {
+    font-size: .74rem; font-weight: 700; letter-spacing: .15em;
+    text-transform: uppercase; color: var(--mint); margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem); line-height: 1.12;
+    letter-spacing: -.02em; margin: 0 0 18px;
+  }
+  p { color: var(--ink-soft); line-height: 1.65; margin: 0 0 14px; }
+  .es { color: var(--ink-muted); font-size: .95rem; }
+  .btn {
+    display: inline-block; margin-top: 22px; padding: 13px 24px;
+    border-radius: 999px; background: var(--mint); color: #fff;
+    text-decoration: none; font-weight: 600; font-size: .95rem;
+    box-shadow: 0 8px 20px rgba(18, 160, 95, .24);
+  }
+  .btn:hover { background: #0f8b52; }
+  footer {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: .82rem; color: var(--ink-muted);
+  }
+  a { color: var(--navy-800); }
+  :focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Error 404</p>
+    <h1>This page does not exist</h1>
+    <p>The address may be mistyped, or the page may have moved.</p>
+    <p class="es">Esta página no existe. Puede volver a la página de inicio.</p>
+    <a class="btn" href="/">Back to home · Volver al inicio</a>
+    <footer>
+      <p style="margin:0">ENLIVA TECNOLOGÍAS, S.L.U. · CIF B75942409 · 29006 Málaga, España</p>
+    </footer>
+  </main>
+</body>
+</html>
