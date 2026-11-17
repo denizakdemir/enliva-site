@@ -78,28 +78,68 @@ Every future `git push` to `main` republishes automatically in under a minute.
 > a human in the settings. After a manual first enable, either mode works; the
 > branch deploy above is simpler and has no Node runtime to deprecate.
 
-### Step 4 (optional, ~€10–15/year) — own domain
+### Step 4 (optional, ~$9 first year) — own domain
 
-`enliva.com`, `enliva.net` and `enliva.es` are already registered by other
-companies, so they are not available. Checked and apparently free at the time of
-writing: **`enliva.dev`**, **`enliva.io`**, **`enlivatecnologias.com`**,
-**`enlivatecnologias.es`** — confirm at the registrar before paying, and prefer a
-`.es`/`.com` if one of those clears.
+Availability and prices checked at the registries on 2026-11-17 (Porkbun,
+USD, before 21% IVA):
 
-1. Buy the domain (any registrar: Namecheap, Cloudflare, Gandi, Dinahosting,
-   Arsys…). Cloudflare Registrar sells at cost and gives free DNS + HTTPS.
-2. Add a file named `CNAME` (no extension) at the repository root containing only
-   the bare domain, e.g. `enliva.dev`, and commit + push it.
-3. At the registrar's DNS panel, point the domain at GitHub Pages:
-   - apex/root (`enliva.dev`): four `A` records →
-     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - optional IPv6: `AAAA` → `2606:50c0:8000::153`, `2606:50c0:8001::153`,
-     `2606:50c0:8002::153`, `2606:50c0:8003::153`
+| Domain | Year 1 | Renewal | Status |
+|---|---|---|---|
+| `enliva.com` / `.net` / `.es` | — | — | taken by other companies |
+| **`enliva.dev`** | 8.75 | **12.87** | available — recommended |
+| `enliva.eu` | 5.88 | 5.88 | available — cheapest to keep |
+| `enliva.app` | 8.75 | 14.93 | available |
+| `enlivatecnologias.com` | 11.81 | 11.81 | available, hard to type |
+| `enliva.io` | 28.12 | 51.80 | available, expensive |
+| `enliva.tech` | 6.99 | 50.98 | available, renewal trap |
+| `enliva.site` / `.online` | 1.96 | 28.84 | available, renewal trap |
+
+Renewal price is the number that matters — year-one discounts are marketing.
+Re-check before buying; a name can also turn out to be "premium" priced at
+checkout, in which case pick the next one down the list.
+
+**Order matters.** GitHub asks you to register the domain in repository settings
+*before* touching DNS, so that nobody else can claim the name on GitHub Pages
+while your DNS is unset (subdomain takeover). The two steps below should be done
+back to back — expect the custom domain to fail to load for the few minutes
+between them, and the `github.io` address to redirect to it once verified.
+
+1. **Buy the domain** at any registrar (Porkbun, Cloudflare, Namecheap, Gandi,
+   Dinahosting…). Turn on auto-renew and two-factor authentication.
+2. **GitHub → Settings → Pages → Custom domain**, type the bare domain
+   (`enliva.dev`) and **Save**. On a branch deploy this commits a `CNAME` file
+   to the root of the repo automatically — pull that commit before editing
+   locally (`git pull`).
+3. **At the registrar's DNS panel.** Delete any parking/default records first,
+   and never use a wildcard `*` record:
+   - apex (`enliva.dev`): four `A` records → `185.199.108.153`,
+     `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - IPv6 (recommended alongside A, not instead of): `AAAA` →
+     `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
+     `2606:50c0:8003::153`
    - `www` → `CNAME` → `denizakdemir.github.io`
-4. Back in **Settings → Pages → Custom domain**, enter the same domain and
-   **Save**; wait for the DNS check to go green, then tick **Enforce HTTPS**.
-5. Note the IPs above can change — GitHub prints the current values in the Pages
-   settings under *"Learn more about configuring custom domains"*.
+4. **Verify** once DNS has propagated (minutes, up to 24 h worst case):
+
+   ```bash
+   dig enliva.dev +noall +answer -t A
+   ```
+
+   It should return exactly the four GitHub IPs above.
+5. Back in **Settings → Pages**, wait for *"DNS check successful"*, then tick
+   **Enforce HTTPS**. The certificate is automatic but the checkbox can take up
+   to 24 hours to become available — until it is ticked the site is also served
+   over plain HTTP. `.dev` and `.app` are HSTS-preloaded, so they refuse to load
+   without a valid certificate: if the site looks dead while HTTPS is pending,
+   that is why.
+6. GitHub redirects the old `denizakdemir.github.io/enliva-site/` address to the
+   custom domain automatically. The `/enliva` stub lives in the *personal* blog
+   repo (`denizakdemir/denizakdemir.github.io` → `enliva/index.html`) and should
+   be repointed at the new domain at the same time.
+
+> The IP addresses above are GitHub's current documented values
+> (`docs.github.com` → *Managing a custom domain for your GitHub Pages site*).
+> They are stable but not permanent — if the DNS check fails, re-read that page
+> rather than trusting this file.
 
 ### Step 5 (optional) — a company email that matches the domain
 
