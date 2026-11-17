@@ -145,22 +145,24 @@ accounts. Current state:
 | Item | Where it points | Separate? |
 |---|---|---|
 | Contact email | `deniz.akdemir.work@gmail.com` | No — swap for a company address (Step 5) |
-| LinkedIn | not linked (the personal profile was removed) | Yes — add a *company* page when one exists; a commented block in `index.html` shows where |
+| LinkedIn | `/in/deniz-akdemir-phd` (personal profile, confirmed 2026-11-17) | Partly — swap to a *company* page when one exists; a comment in `index.html` marks where |
 | GitHub (footer + open-source card) | `github.com/denizakdemir` | Acceptable — it is the code, not the personal profile |
 | Phone | personal mobile `+34 674 771 859` | No — consider a virtual number before scaling up |
 | Founder section | names Deniz as founder | Yes — normal for a small consultancy |
 
 To link a company LinkedIn page later: create the page at
-<https://www.linkedin.com/company/setup/new/>, then uncomment the block in
-`index.html` (search for `Company LinkedIn page`) and paste the page URL.
+<https://www.linkedin.com/company/setup/new/>, then add it as a second row in the
+contact card (a comment in `index.html` marks the spot) — the personal profile
+can then move down to the founder section.
 
-> **LinkedIn status (2026-11-17).** The URL recorded in
-> `LifeOS/profile/profile.md` is `linkedin.com/in/deniz-akdemir--`, which does
-> not resolve. A search found one profile that matches (PhD, Bowling Green,
-> 500+ connections): `linkedin.com/in/deniz-akdemir-phd-50735314a` — **not
-> published, not confirmed**. To use it, either add it back to the contact card
-> or, better, create the company page first so the site keeps pointing at
-> Enliva rather than at a person.
+> **LinkedIn status (2026-11-17).** Deniz confirmed his profile is
+> `linkedin.com/in/deniz-akdemir-phd-50735314a`; the old
+> `linkedin.com/in/deniz-akdemir--` slug recorded in
+> `LifeOS/profile/profile.md` did not resolve and has been corrected there. The
+> confirmed profile is linked from the contact card and as `sameAs` on the
+> founder in the structured data. Next step for full separation: create the
+> Enliva company page and promote it to the contact card, keeping the personal
+> profile in the founder section only.
 
 ## Local preview
 
